@@ -64,9 +64,9 @@ Kernel Provides
 
 **Layered OS**
 ![](./assets/Layered%20OS.png)
-One Problem - Overhead system calls
-Another Problem - Designing Layers Order
-Fewer Layers with More Functionality
+- One Problem - Overhead system calls
+- Another Problem - Designing Layers Order
+- Fewer Layers with More Functionality
 
 **MicroKernel** - All Non Essential Parts are moved to system programs and User Space
 ![](./assets/MicroKernel%20Typical%20Architecture.png)
