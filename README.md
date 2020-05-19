@@ -81,6 +81,27 @@ Mac OSX Darwin is also partly based on the Mach MicroKernel
 ![](./assets/Architecture%20of%20iOS.png)
 - Architecture of Android
 ![](./assets/Android%20OS%20Architecture.png)
+
+OS Debugging
+
+- Log File
+- Core Dump
+- Crash
+- Crash Dump
+
+What Kernel Do in unrecoverable situation?
+Save Kernel's Memory state to a section of disk that does not have any `FileSystem`.  When Kernel encounter a unrecoverable error, it take it's entire content of memory or kernel owned part and dump it into disk section. when booting, a process runs and tries to gather the memory dump from the disk and save it as file in filesystem
+
+Trace Listing
+
+System Generation 
+
+- CPU
+- Boot Disk
+- Memory
+- Device
+- OS Options
+
 ## Resources
 
 - [What Happens when we boot a computer](https://www.geeksforgeeks.org/what-happens-when-we-turn-on-computer/)
