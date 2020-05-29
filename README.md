@@ -14,7 +14,6 @@
 - [Case Studies](#case-studies)
 - [Resources](#resources)
 
-
 ## basics
 
 type of os:
@@ -99,6 +98,19 @@ System Generation
 - Memory
 - Device
 - OS Options
+
+## Process Management
+
+job == process == cpu_activities
+
+- processs in memory
+  - text (code/instructions)
+  - data (global vars)
+  - heap (dynamically allocated)
+  - stack (temporary data - function params, return addresses, local vars)
+- a process itself can be execution environment
+  - jvm is a process (which takes java code and take actions via native machine instructions on behalf of that code)
+job == process == cpu_activities
 
 ## Resources
 
