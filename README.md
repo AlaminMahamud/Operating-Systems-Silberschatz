@@ -1,7 +1,5 @@
 # Operating System Concepts
 
-[![Awesome](https://awesome.re/badge-flat2.svg)](https://awesome.re)
-
 ## Table Of Contents:
 
 - [Basics](#basics)
