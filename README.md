@@ -99,6 +99,10 @@ System Generation
 - Device
 - OS Options
 
+System Boot
+
+- initial bootstrap program
+
 ## Process Management
 
 job == process == cpu_activities
