@@ -105,6 +105,8 @@ System Boot
 
 ## Process Management
 
+### process
+
 job == process == cpu_activities
 
 - processs in memory
@@ -112,9 +114,23 @@ job == process == cpu_activities
   - data (global vars)
   - heap (dynamically allocated)
   - stack (temporary data - function params, return addresses, local vars)
+  ![process-in-memory](./assets/process%20in%20memory.png)
+
+
 - a process itself can be execution environment
   - jvm is a process (which takes java code and take actions via native machine instructions on behalf of that code)
 job == process == cpu_activities
+
+
+*Process State*
+
+- new - created process
+- ready - ready to be assigned to processor
+- running - instructions are being executed
+- waiting - waiting for an event to occur (I/O Completion or reception of a Signal) 
+- terminated - finished execution
+
+![](./assets/process-states.png)
 
 ## Resources
 
