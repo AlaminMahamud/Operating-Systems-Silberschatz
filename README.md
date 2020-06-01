@@ -132,6 +132,25 @@ job == process == cpu_activities
 
 ![](./assets/process-states.png)
 
+*Scheduling queues*
+
+- job queue
+- ready queue
+- device queue
+
+![](assets/queueing-diagram.png)
+
+once the process is allocated to CPU one of the following events may occur
+
+- process issuing I/O request -> I/O Queue -> I/O Happens -> then it placed into the Ready Queue Again (does it stay all the time in CPU if not is it immediately moved to Ready Queue?)
+- Time Slice Expired -> Moved to Ready Queue
+- Fork A Child -> wait for child's termination
+- Wait for an interrupt -> Interrupt Occurs -> then it process from Ready Queue
+
+Process Termination
+- removed from all queues
+- PCB(process control block) and resources deallocated
+
 ## Resources
 
 - [What Happens when we boot a computer](https://www.geeksforgeeks.org/what-happens-when-we-turn-on-computer/)
