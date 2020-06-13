@@ -77,8 +77,7 @@ Save Kernel's Memory state to a section of disk that does not have any `FileSyst
 
 Trace Listing
 
-System Generation 
-
+System Generation
 - CPU
 - Boot Disk
 - Memory
@@ -86,7 +85,6 @@ System Generation
 - OS Options
 
 System Boot
-
 - initial bootstrap program
 
 ## Process Management
