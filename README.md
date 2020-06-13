@@ -2,17 +2,13 @@
 
 ## Table Of Contents:
 
-- [Basics](#basics)
-- [Overview](#overview)
-- [Process Management](#process-management)
-- [Process Co-ordination](#process-co-ordination)
-- [Memory Management](#memory-management)
-- [Storage Management](#storage-management)
-- [Protection and Security](#protection-and-security)
-- [Distributed Systems](#distributed-systems)
-- [Special Purpose Systems](#special-purpose-systems)
-- [Case Studies](#case-studies)
-- [Resources](#resources)
+- [Operating System Concepts](#operating-system-concepts)
+  - [Table Of Contents:](#table-of-contents)
+  - [basics](#basics)
+  - [Overview](#overview)
+  - [Process Management](#process-management)
+    - [process](#process)
+  - [Resources](#resources)
 
 ## basics
 
@@ -132,7 +128,7 @@ job == process == cpu_activities
 
 ![](./assets/process-states.png)
 
-*Scheduling queues*
+*Scheduling Queues*
 
 - job queue
 - ready queue
@@ -148,6 +144,7 @@ once the process is allocated to CPU one of the following events may occur
 - Wait for an interrupt -> Interrupt Occurs -> then it process from Ready Queue
 
 Process Termination
+
 - removed from all queues
 - PCB(process control block) and resources deallocated
 
@@ -155,5 +152,3 @@ Process Termination
 
 - [What Happens when we boot a computer](https://www.geeksforgeeks.org/what-happens-when-we-turn-on-computer/)
 - [Boot Block](https://www.geeksforgeeks.org/operating-system-boot-block/)
-
-
