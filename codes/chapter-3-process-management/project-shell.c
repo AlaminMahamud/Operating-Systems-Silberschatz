@@ -2,7 +2,7 @@
 
 Purpose: A Simple Shell
 ----------------------------------
-takes input and echo them after splitting them into multiple tokens
+A fully functional shell
 
 Original Author - @dalmia
 */
