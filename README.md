@@ -1,16 +1,6 @@
 # Operating System Concepts
 
-## Table Of Contents:
-
-- [Operating System Concepts](#operating-system-concepts)
-  - [Table Of Contents:](#table-of-contents)
-  - [basics](#basics)
-  - [Overview](#overview)
-  - [Process Management](#process-management)
-    - [process](#process)
-  - [Resources](#resources)
-
-## basics
+## Basics
 
 type of os:
 - batch
@@ -144,7 +134,6 @@ once the process is allocated to CPU one of the following events may occur
 - Wait for an interrupt -> Interrupt Occurs -> then it process from Ready Queue
 
 Process Termination
-
 - removed from all queues
 - PCB(process control block) and resources deallocated
 
