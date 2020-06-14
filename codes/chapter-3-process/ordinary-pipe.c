@@ -14,6 +14,11 @@ typedef int bool;
 #define WRITE_END 1
 
 
+#define IS_FORK_FAILED(pid) pid < 0
+#define IS_CHILD_PROCESS(pid) pid == 0
+#define IS_PARENT_PROCESS(pid) pid > 0
+
+
 bool create_a_pipe(int fd[]) {
 	if(pipe(fd) == -1) {
 		fprintf(stderr, "Pipe Failed");
@@ -59,12 +64,12 @@ int main(void) {
 
 	pid = fork_a_child_process();
     	
-	if(pid < 0) {
+	if(IS_FORK_FAILED(pid)) {
 		fork_error_handling();
 		return 1;
-	} else if(pid == 0) {
+	} else if(IS_CHILD_PROCESS(pid)) {
 		child_process(pid, file_descriptor);
-	} else {
+	} else if(IS_PARENT_PROCESS(pid)) {
 		parent_process(pid, file_descriptor);
 	}
     	

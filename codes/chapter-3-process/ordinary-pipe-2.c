@@ -4,18 +4,23 @@
 #include <unistd.h>
 
 
+typedef int bool;
+#define true 1
+#define false 0
+
+
 #define BUFFER_SIZE 25
 #define READ_END 0
 #define WRITE_END 1
 
 
-int create_a_pipe(int fd[]) {
+bool create_a_pipe(int fd[]) {
 	if(pipe(fd) == -1) {
 		fprintf(stderr, "Pipe Failed");
-		return 1;
+		return false;
 	}
 	
-	return 0;
+	return true;
 }
 
 
@@ -59,7 +64,7 @@ int main(void) {
 	int file_descriptor[2];
 	pid_t pid;
 
-	if(create_a_pipe(file_descriptor)) return 1;
+	if(!create_a_pipe(file_descriptor)) return 1;
 	
 	pid = fork_a_child_process();
 	fork_error_handling(pid);
