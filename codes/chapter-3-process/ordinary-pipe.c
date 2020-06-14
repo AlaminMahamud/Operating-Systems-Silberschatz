@@ -47,19 +47,20 @@ void child_process(pid_t pid, int fd[]) {
 
 
 int main(void) {
-	int fd[2];
+	int file_descriptor[2];
 	pid_t pid;
 
-	if(create_a_pipe(fd)) return 1;
+	if(create_a_pipe(file_descriptor)) return 1;
+
 	pid = fork_a_child_process();
     	
 	if(pid < 0) {
 		fork_error_handling();
 		return 1;
 	} else if(pid == 0) {
-		child_process(pid, fd);
+		child_process(pid, file_descriptor);
 	} else {
-		parent_process(pid, fd);
+		parent_process(pid, file_descriptor);
 	}
     	
 	return 0;
