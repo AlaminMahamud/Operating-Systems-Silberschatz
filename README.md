@@ -125,7 +125,6 @@ job == process == cpu_activities
 ![](assets/queueing-diagram.png)
 
 once the process is allocated to CPU one of the following events may occur
-
 - process issuing I/O request -> I/O Queue -> I/O Happens -> then it placed into the Ready Queue Again (does it stay all the time in CPU if not is it immediately moved to Ready Queue?)
 - Time Slice Expired -> Moved to Ready Queue
 - Fork A Child -> wait for child's termination
@@ -134,6 +133,11 @@ once the process is allocated to CPU one of the following events may occur
 Process Termination
 - removed from all queues
 - PCB(process control block) and resources deallocated
+
+- single threaded vs multithreaded process
+![](assets/60dc8478.png)
+
+When a request is made, rather than creating another process, the server creates a new thread to service the request and resume listening for additional requests.
 
 ## Resources
 
