@@ -19,8 +19,8 @@ typedef int bool;
 #define IS_PARENT_PROCESS(pid) pid > 0
 
 
-#define OS_PROCESS_STATUS_SUCCESS 0
-#define OS_PROCESS_STATUS_FAILED 1
+#define OS_PROCESS_EXEC_STATUS_SUCCESS 0
+#define OS_PROCESS_EXEC_STATUS_FAILED 1
 
 
 bool create_a_pipe(int fd[]) {
@@ -61,21 +61,21 @@ void child_process(pid_t pid, int fd[]) {
 
 
 int main(void) {
-	int file_descriptor[2];
 	pid_t pid;
+	int file_descriptor[2];
 
-	if(!create_a_pipe(file_descriptor)) return OS_PROCESS_STATUS_FAILED;
+	if(!create_a_pipe(file_descriptor)) return OS_PROCESS_EXEC_STATUS_FAILED;
 
 	pid = fork_a_child_process();
     	
 	if(IS_FORK_FAILED(pid)) {
 		fork_error_handling();
-		return OS_PROCESS_STATUS_FAILED;
+		return OS_PROCESS_EXEC_STATUS_FAILED;
 	} else if(IS_CHILD_PROCESS(pid)) {
 		child_process(pid, file_descriptor);
 	} else if(IS_PARENT_PROCESS(pid)) {
 		parent_process(pid, file_descriptor);
 	}
     	
-	return OS_PROCESS_STATUS_SUCCESS;
+	return OS_PROCESS_EXEC_STATUS_SUCCESS;
 }
