@@ -8,23 +8,22 @@ typedef int bool;
 #define true 1
 #define false 0
 
+#define SUCCESS 0
+#define FAILED 1
 
 #define BUFFER_SIZE 25
 #define READ_END 0
 #define WRITE_END 1
 
+#define PIPE_CREATION_FAILED_STATUS -1
 
-#define IS_FORK_FAILED(pid) pid < 0
-#define IS_CHILD_PROCESS(pid) pid == 0
-#define IS_PARENT_PROCESS(pid) pid > 0
-
-
-#define OS_PROCESS_EXEC_STATUS_SUCCESS 0
-#define OS_PROCESS_EXEC_STATUS_FAILED 1
+#define is_fork_failed(pid) pid < 0
+#define is_child_process(pid) pid == 0
+#define is_parent_process(pid) pid > 0
 
 
 bool create_a_pipe(int fd[]) {
-	if(pipe(fd) == -1) {
+	if(pipe(fd) == PIPE_CREATION_FAILED_STATUS) {
 		fprintf(stderr, "Pipe Failed");
 		return false;
 	}
@@ -64,18 +63,18 @@ int main(void) {
 	pid_t pid;
 	int file_descriptor[2];
 
-	if(!create_a_pipe(file_descriptor)) return OS_PROCESS_EXEC_STATUS_FAILED;
+	if(!create_a_pipe(file_descriptor)) return FAILED;
 
 	pid = fork_a_child_process();
     	
-	if(IS_FORK_FAILED(pid)) {
+	if(is_fork_failed(pid)) {
 		fork_error_handling();
-		return OS_PROCESS_EXEC_STATUS_FAILED;
-	} else if(IS_CHILD_PROCESS(pid)) {
+		return FAILED;
+	} else if(is_child_process(pid)) {
 		child_process(pid, file_descriptor);
-	} else if(IS_PARENT_PROCESS(pid)) {
+	} else if(is_parent_process(pid)) {
 		parent_process(pid, file_descriptor);
 	}
     	
-	return OS_PROCESS_EXEC_STATUS_SUCCESS;
+	return SUCCESS;
 }
